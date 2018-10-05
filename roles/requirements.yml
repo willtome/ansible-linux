@@ -1,0 +1,3 @@
+---
+- src: dev-sec.ssh-hardening
+- src: mindpointgroup.rhel7-cis
