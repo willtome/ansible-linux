@@ -16,3 +16,4 @@
       state: latest
       security: yes
       exclude: kernel*
+    tags: security
