@@ -16,4 +16,8 @@
       state: latest
       security: yes
       exclude: kernel*
+    register: security_out
     tags: security
+
+  - debug:
+      msg: "{{ security_out.msg | regex_replace('\\n', '\n') }}"
