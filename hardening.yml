@@ -12,6 +12,6 @@
   
   - name: Apply CIS Baseline
     include_role:
-      name: MindPointGroup.RHEL7-CIS
+      name: mindpointgroup.rhel7-cis 
     vars:
       rhel7cis_rule_1_8: false #install updates
