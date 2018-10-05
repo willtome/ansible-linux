@@ -18,6 +18,7 @@
       exclude: kernel*
     register: security_out
     tags: security
+    skip_errors: yes
 
   - debug:
       msg: "{{ security_out.msg | regex_replace('\\n', '\n') }}"
