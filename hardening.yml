@@ -4,14 +4,45 @@
   become: yes
 
   tasks:
+  - name: configure password for ec2-user
+    user:
+      name: ec2-user
+      password: '$6$rxiW8KZH$LUN.DuvVgMMzojJESXdD7ML8i40h.DHISO4vV0VfPmoJvzpNwil1OW26ZqvyZtyPOqmCDzr01CCJowCEoAaOI/'
+    tags: always
+
+  - name: allow wheel group to sudo with NOPASSWD
+    lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: '^%wheel ALL='
+      line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+      validate: '/usr/sbin/visudo -cf %s'
+    tags: always
+
+  - name: install bind-utils
+    yum:
+      name: bind-utils
+      state: latest
+    tags: always
+ 
+  - name: Configure Firewall
+    include_role:
+      name: linux-system-roles.firewall
+    tags: Firewall
+
+  - name: Configure Timesync
+    include_role:
+      name: linux-system-roles.timesync
+    tags: NTP
+
   - name: SSH Hardening
     include_role:
        name: dev-sec.ssh-hardening
-    vars:
-      sftp_enabled: true
+    tags: SSH
   
+  # run with --skip-tags accounts_passwords_pam_faillock_deny
   - name: Apply CIS Baseline
     include_role:
-      name: mindpointgroup.rhel7-cis 
-    vars:
-      rhel7cis_rule_1_8: false #install updates
+      name: redhatofficial.rhel7_pci_dss 
+    tags: PCI
+
