@@ -1,0 +1,26 @@
+---
+- name: harden linux systems
+  hosts: "{{ HOSTS | default('all') }}"
+  become: yes
+
+  tasks:
+  - name: configure password for ec2-user
+    user:
+      name: ec2-user
+      password: '$6$rxiW8KZH$LUN.DuvVgMMzojJESXdD7ML8i40h.DHISO4vV0VfPmoJvzpNwil1OW26ZqvyZtyPOqmCDzr01CCJowCEoAaOI/'
+    tags: always
+
+  - name: allow wheel group to sudo with NOPASSWD
+    lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: '^%wheel ALL='
+      line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+      validate: '/usr/sbin/visudo -cf %s'
+    tags: always
+
+  - name: install bind-utils
+    yum:
+      name: bind-utils
+      state: latest
+    tags: always

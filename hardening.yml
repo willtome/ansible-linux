@@ -2,47 +2,30 @@
 - name: harden linux systems
   hosts: "{{ HOSTS | default('all') }}"
   become: yes
+  vars:
+    - harden_firewall: False
+    - harden_time: False
+    - harden_ssh: False
+    - harden_pci: False
 
   tasks:
-  - name: configure password for ec2-user
-    user:
-      name: ec2-user
-      password: '$6$rxiW8KZH$LUN.DuvVgMMzojJESXdD7ML8i40h.DHISO4vV0VfPmoJvzpNwil1OW26ZqvyZtyPOqmCDzr01CCJowCEoAaOI/'
-    tags: always
-
-  - name: allow wheel group to sudo with NOPASSWD
-    lineinfile:
-      path: /etc/sudoers
-      state: present
-      regexp: '^%wheel ALL='
-      line: '%wheel ALL=(ALL) NOPASSWD: ALL'
-      validate: '/usr/sbin/visudo -cf %s'
-    tags: always
-
-  - name: install bind-utils
-    yum:
-      name: bind-utils
-      state: latest
-    tags: always
- 
   - name: Configure Firewall
+    when: harden_firewall
     include_role:
       name: linux-system-roles.firewall
-    tags: Firewall
 
   - name: Configure Timesync
+    when: harden_time
     include_role:
       name: linux-system-roles.timesync
-    tags: NTP
 
   - name: SSH Hardening
+    when: harden_ssh
     include_role:
        name: dev-sec.ssh-hardening
-    tags: SSH
-  
-  # run with --skip-tags accounts_passwords_pam_faillock_deny
-  - name: Apply CIS Baseline
-    include_role:
-      name: redhatofficial.rhel7_pci_dss 
-    tags: PCI
 
+  # run with --skip-tags accounts_passwords_pam_faillock_deny
+  - name: Apply PCI Baseline
+    when: harden_pci
+    include_role:
+      name: redhatofficial.rhel7_pci_dss
