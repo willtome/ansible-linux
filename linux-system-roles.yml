@@ -1,0 +1,13 @@
+---
+- name: install linux system roles
+  hosts: "{{ HOSTS }}"
+  gather_facts: no
+
+  tasks:
+  - name: enable extras repository
+    yum_repository:
+      name: rhel-7-server-extras-rpms
+
+  - name: install rhel-system-roles
+    yum:
+      name: rhel-system-roles

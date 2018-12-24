@@ -1,0 +1,19 @@
+---
+#Time Config
+timesync_ntp_servers:
+ - hostname: 0.rhel.pool.ntp.org
+   iburst: yes
+ - hostname: 1.rhel.pool.ntp.org
+   iburst: yes
+ - hostname: 2.rhel.pool.ntp.org
+   iburst: yes
+ - hostname: 3.rhel.pool.ntp.org
+   iburst: yes
+
+#Firewall Config
+firewall:
+  service: 'ssh'
+  state: 'enabled'
+
+#SSH Config
+sftp_enabled: true

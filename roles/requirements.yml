@@ -2,5 +2,7 @@
 - src: dev-sec.ssh-hardening
 - src: mindpointgroup.rhel7-cis
 - src: redhatofficial.rhel7_pci_dss
-- src: linux-system-roles.firewall
-- src: linux-system-roles.timesync
+
+# Installed via rhel-system-roles into /usr/share/ansible/roles
+#- src: linux-system-roles.firewall
+#- src: linux-system-roles.timesync

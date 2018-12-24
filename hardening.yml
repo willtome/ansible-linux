@@ -12,12 +12,12 @@
   - name: Configure Firewall
     when: harden_firewall | bool
     include_role:
-      name: linux-system-roles.firewall
+      name: rhel-system-roles.firewall
 
   - name: Configure Timesync
     when: harden_time | bool
     include_role:
-      name: linux-system-roles.timesync
+      name: rhel-system-roles.timesync
 
   - name: SSH Hardening
     when: harden_ssh | bool
