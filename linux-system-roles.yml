@@ -5,7 +5,7 @@
 
   tasks:
   - name: enable extras repository
-    yum_repository:
+    rhsm_repository:
       name: rhel-7-server-extras-rpms
 
   - name: install rhel-system-roles
