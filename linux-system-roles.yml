@@ -4,10 +4,6 @@
   gather_facts: no
 
   tasks:
-  - name: enable extras repository
-    rhsm_repository:
-      name: rhel-7-server-extras-rpms
-
   - name: install rhel-system-roles
     yum:
       name: rhel-system-roles
