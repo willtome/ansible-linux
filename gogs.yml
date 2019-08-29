@@ -1,0 +1,31 @@
+---
+- hosts: "{{ HOSTS }}"
+  become: yes
+
+  tasks:
+  - name: install docker
+    yum:
+      name: 
+        - docker
+        - docker-python
+
+  - name: start docker
+    systemd:
+      name: docker
+      state: started
+  
+  - name: create data directory
+    file:
+      path: /var/gogs
+      state: directory
+
+  - name: run gogs
+    docker_container:
+      name: gogs
+      image: gogs/gogs
+      state: started
+      volumes:
+        - /var/gogs:/data:Z
+      ports:
+        - "10022:22"
+        - "10080:3000"
