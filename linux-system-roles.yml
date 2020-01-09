@@ -1,9 +1,0 @@
----
-- name: install linux system roles
-  hosts: "{{ HOSTS }}"
-  gather_facts: no
-
-  tasks:
-  - name: install rhel-system-roles
-    yum:
-      name: rhel-system-roles

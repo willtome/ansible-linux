@@ -1,5 +1,5 @@
 ---
-- name: harden linux systems
+- name: config management
   hosts: "{{ HOSTS | default('all') }}"
   become: yes
 
