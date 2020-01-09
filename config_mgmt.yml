@@ -19,8 +19,12 @@
       validate: '/usr/sbin/visudo -cf %s'
     tags: always
 
-  - name: install bind-utils
+  - name: install at
     yum:
-      name: bind-utils
+      name: at
       state: latest
-    tags: always
+
+  - name: start at
+    service:
+      name: atd
+      state: started

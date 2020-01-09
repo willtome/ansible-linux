@@ -1,0 +1,22 @@
+---
+- name: grant sudo
+  hosts: "{{ HOSTS | default('all') }}"
+  become: yes
+  vars:
+    sudo_cleanup: true
+
+  tasks:
+    - name: create sudo rule
+      copy:
+        dest: "/etc/sudoers.d/{{ sudo_user }}"
+        owner: root
+        group: root
+        mode: 0640
+        content: "{{ sudo_user }} ALL=(ALL) NOPASSWD:ALL"
+
+    - name: Time based cleanup
+      at:
+        command: "rm /etc/sudoers.d/{{ sudo_user }}"
+        count: "{{ sudo_count | default('10') }}"
+        units: "{{ sudo_units | default('minutes') }}"
+      when: sudo_cleanup|bool
