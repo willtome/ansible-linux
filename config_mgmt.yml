@@ -19,12 +19,12 @@
       validate: '/usr/sbin/visudo -cf %s'
     tags: always
 
-  - name: install at
+  - name: install package
     yum:
       name: at
       state: latest
 
-  - name: start at
+  - name: start service
     service:
       name: atd
       state: started

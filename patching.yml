@@ -9,6 +9,7 @@
       name: '*'
       state: latest
       exclude: kernel*
+    tags: all
   
   - name: upgrade all packages security related except kernel
     yum:
