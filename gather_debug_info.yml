@@ -2,6 +2,7 @@
 - name: gather debug info
   hosts: "{{ HOSTS | default('all') }}"
   become: yes
+  gather_facts: no
 
   tasks:
     - name: Gather recent vmstat info

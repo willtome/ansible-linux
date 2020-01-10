@@ -2,6 +2,7 @@
 - name: grant sudo
   hosts: "{{ HOSTS | default('all') }}"
   become: yes
+  gather_facts: no
   vars:
     sudo_cleanup: true
 

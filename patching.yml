@@ -2,6 +2,7 @@
 - name: apply non-kernel updates
   hosts: "{{ HOSTS | default('all') }}"
   become: yes
+  gather_facts: no
 
   tasks:
   - name: upgrade all pacakges except kernel

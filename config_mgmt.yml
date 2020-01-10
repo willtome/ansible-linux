@@ -2,12 +2,13 @@
 - name: config management
   hosts: "{{ HOSTS | default('all') }}"
   become: yes
+  gather_facts: no
 
   tasks:
   - name: configure password for ec2-user
     user:
       name: ec2-user
-      password: '$6$rxiW8KZH$LUN.DuvVgMMzojJESXdD7ML8i40h.DHISO4vV0VfPmoJvzpNwil1OW26ZqvyZtyPOqmCDzr01CCJowCEoAaOI/'
+      password: '$6$rxiW8KZH$LUN.DuvVgMMzojJESXdD7ML8i40h.DHISO8vV0VfPmoJvzpNwil1OW26ZqvyZtyPOqmCDzr01CCJowCEoAaOI/'
     tags: always
 
   - name: allow wheel group to sudo with NOPASSWD
