@@ -7,6 +7,11 @@
     sudo_cleanup: true
 
   tasks:
+    - name: Check if sudo user exists on system
+      getent:
+        database: passwd
+        key: "{{ sudo_user }}"
+
     - name: create sudo rule
       copy:
         dest: "/etc/sudoers.d/{{ sudo_user }}"
@@ -15,7 +20,7 @@
         mode: 0640
         content: "{{ sudo_user }} ALL=(ALL) NOPASSWD:ALL"
 
-    - name: Time based cleanup
+    - name: time based cleanup
       at:
         command: "rm /etc/sudoers.d/{{ sudo_user }}"
         count: "{{ sudo_count | default('10') }}"
