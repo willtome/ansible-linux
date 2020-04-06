@@ -1,0 +1,14 @@
+---
+- name: Get Job Host Summaries
+  uri:
+    url: "https://{{ tower_api_host }}/api/v2/jobs/{{ job_id | default(tower_current_job_id) }}/job_host_summaries/"
+    method: GET
+    validate_certs: "{{ tower_api_ssl }}"
+    headers:
+      Authorization: "Bearer {{tower_api_token}}"
+      Content-Type: "application/json"
+  register: job_host_summaries_out
+  
+- name: Set Job Host Summaries
+  set_fact:
+    tower_job_host_summaries: "{{ job_host_summaries_out.json.results }}"

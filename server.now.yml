@@ -1,0 +1,13 @@
+---
+plugin: servicenow.servicenow.now
+enhanced: true
+selection_order: name
+compose:
+    ansible_host: sn_ip_address
+#    os_class: sn_os.split(' ')[0]
+keyed_groups:
+    - key: sn_sys_class_name
+      prefix: sn
+#    - key: os_class
+#      prefix: ''
+#      separator: ''

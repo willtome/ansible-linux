@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    workflow_node_name: undef
+
+  tasks:
+
+    - name: Get Workflow
+      include_role:
+        name: tower-api
+        tasks_from: get-workflow
+
+    - name: Get Job Stats
+      include_role:
+        name: tower-api
+        tasks_from: get-job-stats
+      loop: "{{ workflow_nodes }}"
+      when: 
+        - item.summary_fields.job is defined
+        - job_name == workflow_node_name
+      vars:
+        job_id: "{{ item.summary_fields.job.id }}"
+        job_name: "{{ item.summary_fields.job.name }}"
+
+    - name: check for changes
+      assert:
+       that: "{{ item.changed == 0 }}"
+      loop: "{{ tower_job_host_summaries }}"

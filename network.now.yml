@@ -1,0 +1,19 @@
+---
+plugin: servicenow.servicenow.now
+enhanced: true
+selection_order: name
+table: cmdb_ci_netgear
+fields:
+  - ip_address
+  - fqdn
+  - host_name
+  - sys_class_name
+  - name
+  - can_route
+  - can_switch
+  - can_partitionvlans
+groups:
+  can_switch: sn_can_switch
+keyed_groups:
+    - key: sn_sys_class_name
+      prefix: sn

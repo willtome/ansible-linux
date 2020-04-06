@@ -1,0 +1,6 @@
+---
+tower_api_token: "{{ lookup('env', 'TOWER_API_TOKEN') }}"
+tower_api_ssl: "{{ lookup('env','TOWER_VERIFY_SSL') }}"
+tower_api_host: "{{ lookup('env', 'TOWER_HOST') }}"
+tower_api_url: "https://{{ tower_api_host }}/api/v2"
+tower_current_job_id: "{{ lookup('env', 'JOB_ID') }}"

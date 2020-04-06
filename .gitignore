@@ -2,4 +2,5 @@
 *.retry
 hosts
 roles
+!roles/tower-api/
 !roles/requirements.yml
