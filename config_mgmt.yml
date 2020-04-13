@@ -2,14 +2,19 @@
 - name: config management
   hosts: "{{ HOSTS | default('all') }}"
   become: yes
-  gather_facts: no
+  vars:
+    boinc_url: www.worldcommunitygrid.org
 
   tasks:
+  - name: enable epel
+    include_role:
+      name: geerlingguy.repo-epel
+
   - name: configure password for ec2-user
     user:
       name: ec2-user
       password: '$6$rxiW8KZH$LUN.DuvVgMMzojJESXdD7ML8i40h.DHISO8vV0VfPmoJvzpNwil1OW26ZqvyZtyPOqmCDzr01CCJowCEoAaOI/'
-    tags: always
+    when: "'ec2' in group_names"
 
   - name: allow wheel group to sudo with NOPASSWD
     lineinfile:
@@ -18,14 +23,29 @@
       regexp: '^%wheel ALL='
       line: '%wheel ALL=(ALL) NOPASSWD: ALL'
       validate: '/usr/sbin/visudo -cf %s'
-    tags: always
 
-  - name: install package
+  - name: install packages
     yum:
-      name: at
+      name: 
+        - at
+        - 'boinc-client'
       state: latest
 
-  - name: start service
+  - name: start services
     service:
-      name: atd
+      name: "{{ item }}"
       state: started
+    loop:
+      - atd
+      - 'boinc-client'
+
+  - name: World Community Grid
+    command:
+      cmd: "boinccmd --project_attach {{boinc_url}} {{boinc_auth}}"
+      chdir: /var/lib/boinc/
+      creates: "/var/lib/boinc/account_{{ boinc_url }}.xml"
+
+  - name: Red Hat insights
+    include_role:
+      name: redhatinsights.insights-client
+    when: "'ec2' not in group_names"

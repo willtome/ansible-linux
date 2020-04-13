@@ -4,3 +4,5 @@
 - src: redhatofficial.rhel7_pci_dss
 - src: linux-system-roles.firewall
 - src: linux-system-roles.timesync
+- src: geerlingguy.repo-epel
+- src: redhatinsights.insights-client

@@ -1,0 +1,26 @@
+- name: subscription manager
+  hosts: "{{ HOSTS | default('all') }}"
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: unregister
+      redhat_subscription:
+        state: absent
+    
+    - name: run clean commands
+      command: 
+        cmd: "{{ item }}"
+        warn: false
+      loop:
+        - subscription-manager clean
+        - yum clean all
+      ignore_errors: true
+    
+    - name: register
+      redhat_subscription:
+        state: present
+        force_register: yes
+        auto_attach: yes
+        org_id: "{{ org_id }}"
+        activationkey: "{{ activation_key }}"
