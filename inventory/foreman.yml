@@ -1,0 +1,3 @@
+---
+plugin: theforman.foreman.foreman
+validate_certs: false

@@ -1,3 +1,5 @@
 ---
 collections:
   - servicenow.servicenow
+  - willtome.insights
+  - theforeman.foreman
