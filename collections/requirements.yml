@@ -1,5 +1,6 @@
 ---
 collections:
   - servicenow.servicenow
-  - willtome.insights
+  - name: willtome.insights
+    version: 0.0.1-dev01
   - theforeman.foreman
