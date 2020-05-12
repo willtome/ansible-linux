@@ -3,4 +3,3 @@ collections:
   - servicenow.servicenow
   - name: willtome.insights
     version: 0.0.1-dev01
-  - theforeman.foreman

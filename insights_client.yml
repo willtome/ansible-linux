@@ -1,0 +1,9 @@
+---
+- hosts: "{{ HOSTS }}"
+  become: yes
+  collections:
+    - willtome.insights
+
+  tasks:
+    - import_role:
+        name: insights_client
