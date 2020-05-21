@@ -7,7 +7,7 @@
   tasks:
   - name: set hostname
     hostname:
-      name: "{{ inventory_hostname }}"
+      name: "{{ inventory_hostname | regex_replace('_','-')}}"
 
   - name: remove rhui client packages
     yum:
