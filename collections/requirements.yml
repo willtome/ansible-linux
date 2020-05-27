@@ -1,5 +1,6 @@
 ---
 collections:
   - servicenow.servicenow
+  - amazon.aws
   - name: willtome.insights
     version: 0.0.1-dev01
