@@ -14,7 +14,7 @@
     user:
       name: ec2-user
       password: '$6$rxiW8KZH$LUN.DuvVgMMzojJESXdD7ML8i40h.DHISO8vV0VfPmoJvzpNwil1OW26ZqvyZtyPOqmCDzr01CCJowCEoAaOI/'
-    when: "'ec2' in group_names"
+    when: "'aws_ec2' in group_names"
 
   - name: allow wheel group to sudo with NOPASSWD
     lineinfile:
@@ -44,8 +44,3 @@
       cmd: "boinccmd --project_attach {{boinc_url}} {{boinc_auth}}"
       chdir: /var/lib/boinc/
       creates: "/var/lib/boinc/account_{{ boinc_url }}.xml"
-
-  - name: Red Hat insights
-    include_role:
-      name: redhatinsights.insights-client
-    when: "'ec2' not in group_names"
