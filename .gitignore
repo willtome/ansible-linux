@@ -1,8 +1,8 @@
 .DS_STORE
 *.retry
 hosts
-roles
 ansible.cfg
-!roles/tower-api/
-!roles/requirements.yml
-!roles/requirements.yml
+/roles
+!/roles/tower-api/
+!/roles/requirements.yml
+!/roles/requirements.yml
