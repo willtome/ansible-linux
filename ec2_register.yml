@@ -1,8 +1,6 @@
 ---
 - hosts: "{{ HOSTS }}"
   become: yes
-  collections:
-    - redhatinsights.insights
 
   tasks:
   - name: set hostname
@@ -49,4 +47,10 @@
 
   - name: configure Red Hat insights
     import_role:
-      name: insights_client
+      name: redhatinsights.insights_client
+    vars:
+      insights_tags:
+        env: demo
+        location: "{{ placement.availability_zone }}"
+        group: "{{ tags.Group }}"
+        owner: "{{ tags.Owner }}"
