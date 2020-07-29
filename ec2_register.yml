@@ -47,7 +47,7 @@
 
   - name: configure Red Hat insights
     import_role:
-      name: redhatinsights.insights_client
+      name: redhatinsights.insights.insights_client
     vars:
       insights_tags:
         env: demo
