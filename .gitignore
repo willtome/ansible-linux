@@ -2,8 +2,7 @@
 *.retry
 hosts
 roles
+ansible.cfg
 !roles/tower-api/
 !roles/requirements.yml
-collections
 !roles/requirements.yml
-!collections/requirements.yml

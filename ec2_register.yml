@@ -2,7 +2,7 @@
 - hosts: "{{ HOSTS }}"
   become: yes
   collections:
-    - willtome.insights
+    - redhatinsights.insights
 
   tasks:
   - name: set hostname

@@ -1,5 +1,5 @@
 ---
-plugin: willtome.insights.insights
+plugin: redhatinsights.insights.insights
 get_patches: yes
 groups:
   patch_bugs: insights_patching.rhba_count > 0

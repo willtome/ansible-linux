@@ -1,0 +1,30 @@
+{
+ "collection_info": {
+  "namespace": "redhatinsights",
+  "name": "insights",
+  "version": "1.0.1",
+  "authors": [
+   "Will Tome (@wtome)"
+  ],
+  "readme": "README.md",
+  "tags": [],
+  "description": "Ansible Collection for Red Hat insights",
+  "license": [
+   "Apache-2.0"
+  ],
+  "license_file": null,
+  "dependencies": {},
+  "repository": "https://github.com/RedHatInsights/ansible-collections-insights",
+  "documentation": null,
+  "homepage": null,
+  "issues": null
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "dbbf8769bda3c65abfe332e6f08f16158575983b45395c5bde4465abec817dbe",
+  "format": 1
+ },
+ "format": 1
+}
