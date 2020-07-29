@@ -2,4 +2,4 @@
 - hosts: "{{ HOSTS }}"
   become: yes
   roles:
-   - willtome.insights.compliance
+   - redhatinsights.insights.compliance
