@@ -12,3 +12,4 @@ compose:
 keyed_groups:
   - key: placement.availability_zone
     prefix: aws
+  - key: tags.Group
