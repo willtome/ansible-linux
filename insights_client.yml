@@ -1,10 +1,12 @@
 ---
 - hosts: "{{ HOSTS }}"
   become: yes
+  collections:
+  - redhatinsights.insights
 
   tasks:
     - import_role:
-        name: redhatinsights.insights.insights_client
+        name: insights_client
       vars:
         insights_tags:
           env: prod

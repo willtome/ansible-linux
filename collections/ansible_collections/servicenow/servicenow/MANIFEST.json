@@ -2,7 +2,7 @@
  "collection_info": {
   "namespace": "servicenow",
   "name": "servicenow",
-  "version": "1.0.2",
+  "version": "1.0.3-dev3",
   "authors": [
    "Paul Knight <paul.knight@delaware.gov>",
    "Tim Rightnour <thegarbledone@gmail.com>",
@@ -27,13 +27,13 @@
   "repository": "https://github.com/ServiceNowITOM/servicenow-ansible",
   "documentation": "https://github.com/ServiceNowITOM/servicenow-ansible/wiki",
   "homepage": "https://github.com/ServiceNowITOM/servicenow-ansible",
-  "issues": "https://www.github.com/ServiceNowITOM/servicenow-ansible/issues"
+  "issues": "https://github.com/ServiceNowITOM/servicenow-ansible/issues"
  },
  "file_manifest_file": {
   "name": "FILES.json",
   "ftype": "file",
   "chksum_type": "sha256",
-  "chksum_sha256": "30f208da6a34f7a8151907dc402d59e8aa4b6334b39c0f405b678be91ce5ae94",
+  "chksum_sha256": "f389e3ea9d5ca39a7fea99ce05e3e014269df4edc12a47ecb20b244dfe3bbd9e",
   "format": 1
  },
  "format": 1

@@ -2,7 +2,7 @@
  "collection_info": {
   "namespace": "redhatinsights",
   "name": "insights",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
    "Will Tome (@wtome)"
   ],
@@ -23,7 +23,7 @@
   "name": "FILES.json",
   "ftype": "file",
   "chksum_type": "sha256",
-  "chksum_sha256": "dbbf8769bda3c65abfe332e6f08f16158575983b45395c5bde4465abec817dbe",
+  "chksum_sha256": "6570ade71d8216aad9c31a9ab62aaa0aa17e8b75a633b20481ba01884e6f6128",
   "format": 1
  },
  "format": 1

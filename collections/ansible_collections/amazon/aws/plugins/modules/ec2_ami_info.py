@@ -208,7 +208,6 @@ from ansible.module_utils.common.dict_transformations import camel_dict_to_snake
 
 from ..module_utils.core import AnsibleAWSModule
 from ..module_utils.ec2 import ansible_dict_to_boto3_filter_list
-from ..module_utils.ec2 import ansible_dict_to_boto3_tag_list
 from ..module_utils.ec2 import boto3_tag_list_to_ansible_dict
 
 
@@ -262,10 +261,10 @@ def list_ec2_images(ec2_client, module):
 def main():
 
     argument_spec = dict(
-        image_ids=dict(default=[], type='list', aliases=['image_id']),
+        image_ids=dict(default=[], type='list', elements='str', aliases=['image_id']),
         filters=dict(default={}, type='dict'),
-        owners=dict(default=[], type='list', aliases=['owner']),
-        executable_users=dict(default=[], type='list', aliases=['executable_user']),
+        owners=dict(default=[], type='list', elements='str', aliases=['owner']),
+        executable_users=dict(default=[], type='list', elements='str', aliases=['executable_user']),
         describe_image_attributes=dict(default=False, type='bool')
     )
 

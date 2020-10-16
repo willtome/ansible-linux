@@ -1,0 +1,5 @@
+---
+plugin: servicenow.servicenow.now
+instance: dev100491
+username: admin
+password: vv0hHYvFYjL5

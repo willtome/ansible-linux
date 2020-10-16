@@ -8,31 +8,17 @@
    "format": 1
   },
   {
-   "name": "release.yml",
+   "name": ".gitignore",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "e27b9e22e24e48b94c76077fb4fe238e1739ab5964a4aa0127e450b4bd6f2dc8",
+   "chksum_sha256": "afd19f3a546e4f7c923914f5f9e7c0fb0c17680a00b63f73b2720fa56ec9e7b4",
    "format": 1
   },
   {
-   "name": "CHANGELOG.md",
+   "name": "CHANGELOG.rst",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "c40d364fb62f92dabb5f60fdb01052b842a021220041e26b510db64878c6789d",
-   "format": 1
-  },
-  {
-   "name": "config",
-   "ftype": "dir",
-   "chksum_type": null,
-   "chksum_sha256": null,
-   "format": 1
-  },
-  {
-   "name": "config/now.yml.sample",
-   "ftype": "file",
-   "chksum_type": "sha256",
-   "chksum_sha256": "606cea64ee0670f91c9f9c4d5f0bb96a6d78e649c97339ea8397194e2ac630d5",
+   "chksum_sha256": "9fe55ef57bd80c722b46dcb0d63fe27ac6ca4d05f2a4e94b5420a31e94736b5a",
    "format": 1
   },
   {
@@ -40,34 +26,6 @@
    "ftype": "dir",
    "chksum_type": null,
    "chksum_sha256": null,
-   "format": 1
-  },
-  {
-   "name": "plugins/doc_fragments",
-   "ftype": "dir",
-   "chksum_type": null,
-   "chksum_sha256": null,
-   "format": 1
-  },
-  {
-   "name": "plugins/doc_fragments/service_now.py",
-   "ftype": "file",
-   "chksum_type": "sha256",
-   "chksum_sha256": "9c638807ef8d2f0b8fef667f38fc1f6221d1e3165d2a21437930ccc8a86e8975",
-   "format": 1
-  },
-  {
-   "name": "plugins/inventory",
-   "ftype": "dir",
-   "chksum_type": null,
-   "chksum_sha256": null,
-   "format": 1
-  },
-  {
-   "name": "plugins/inventory/now.py",
-   "ftype": "file",
-   "chksum_type": "sha256",
-   "chksum_sha256": "0c974e240180dfe8c754e470ceb97802dcc81746b2dcb49c6e1cd56da54ece67",
    "format": 1
   },
   {
@@ -85,17 +43,38 @@
    "format": 1
   },
   {
-   "name": "plugins/modules",
+   "name": "plugins/inventory",
    "ftype": "dir",
    "chksum_type": null,
    "chksum_sha256": null,
    "format": 1
   },
   {
-   "name": "plugins/modules/snow_record.py",
+   "name": "plugins/inventory/now.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "6101749e44f8596479220a89810c01a7cb69e52f5e79593fb64a26af8d8f7fef",
+   "chksum_sha256": "c0a647ecb884c7cfbde45e59e54f4e704beabb60539cb449cae8190a35492726",
+   "format": 1
+  },
+  {
+   "name": "plugins/doc_fragments",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "plugins/doc_fragments/service_now.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "df633dfdeca0822cc25d6d9e4ed85ce84e0cf725cd0b1eb35c77437ed925c466",
+   "format": 1
+  },
+  {
+   "name": "plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
    "format": 1
   },
   {
@@ -106,45 +85,73 @@
    "format": 1
   },
   {
-   "name": "tests",
+   "name": "plugins/modules/snow_record.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6101749e44f8596479220a89810c01a7cb69e52f5e79593fb64a26af8d8f7fef",
+   "format": 1
+  },
+  {
+   "name": "docs",
    "ftype": "dir",
    "chksum_type": null,
    "chksum_sha256": null,
    "format": 1
   },
   {
-   "name": "tests/now.yml",
+   "name": "docs/create_docs.yml",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "3d15a7930145c20d7768680dffb03ff6eb1f6f8e62ba9217e34f3510d5dc3dd1",
+   "chksum_sha256": "e7e7588a0b59e2e5b7512a19ec6133fc96bf5aac68b87eb869b225b6cb767364",
    "format": 1
   },
   {
-   "name": "tests/network.enhanced.now.yml",
+   "name": "docs/snow_record_find.md",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "b761770cbf0844ef603fd11d7b9b4da06dacc15416a41630c12d5d8ca384216a",
+   "chksum_sha256": "03197238ab13b8a897e5d7612f08f7ae55ad1cedf7a6507758a1a6b07cd4349e",
    "format": 1
   },
   {
-   "name": "tests/enhanced.now.yml",
+   "name": "docs/templates",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "docs/templates/docs.md.j2",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "ee1ac7151369516c6016ccb9b66ea6574ee3c71e34d8f4269c9cffc1cab20ebe",
+   "chksum_sha256": "8431b9f9430d6d0c1154dde567e2406cfe0e2526449740cc7014f7b2df3c8fbb",
+   "format": 1
+  },
+  {
+   "name": "docs/snow_record.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "07643b41e054a048c7ac8cfeb6fc72bfa5e8c60065a8f2b7d961423c6dbcc2d5",
+   "format": 1
+  },
+  {
+   "name": "docs/inventory.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4fa69a805fd91aafea36f2672677d3319c9c6a25b39e2bd03684172bb8c2f6fc",
+   "format": 1
+  },
+  {
+   "name": "release.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b52bcbfa3637651e45924081aae2278f25ac6aaf111de3fe745db30a9fcec4f6",
    "format": 1
   },
   {
    "name": "README.md",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "b93778c36941637d0ca7b13736be611bde6d6841af2f715bcf65d29d633e3529",
-   "format": 1
-  },
-  {
-   "name": ".gitignore",
-   "ftype": "file",
-   "chksum_type": "sha256",
-   "chksum_sha256": "afd19f3a546e4f7c923914f5f9e7c0fb0c17680a00b63f73b2720fa56ec9e7b4",
+   "chksum_sha256": "830b90abbfe0cf65c38f0b85713f55313e799ff39a2f566b7cce3e1f6f7d4bdf",
    "format": 1
   },
   {
@@ -169,6 +176,104 @@
    "format": 1
   },
   {
+   "name": "config",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "config/now.yml.sample",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "606cea64ee0670f91c9f9c4d5f0bb96a6d78e649c97339ea8397194e2ac630d5",
+   "format": 1
+  },
+  {
+   "name": "changelogs",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "changelogs/changelog.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f264d08b68312564f29e600fa4e5a7577838223e694ad8b2a14a8638f01c16bb",
+   "format": 1
+  },
+  {
+   "name": "changelogs/fragments",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "changelogs/fragments/22_hostnames.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "26e4736228782d1d2c98be10c0505849265c0053c1703ea0df0ad4927ac5bbf9",
+   "format": 1
+  },
+  {
+   "name": "changelogs/fragments/.keep",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "changelogs/.plugin-cache.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4da1d88ab236e8c332fe9d49714507d910f546b23abe72c2b0e5efb89afd9bf2",
+   "format": 1
+  },
+  {
+   "name": "changelogs/config.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b6f36b2c363e4e2764cecdbfeee2be02fa4d9704b0d132d426918358f708a2bf",
+   "format": 1
+  },
+  {
+   "name": "tests",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/module_test.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "a2aecb71b1e36d9d03aeaab570664c9b0f0a98c192caef294d35f2b2865ade8a",
+   "format": 1
+  },
+  {
+   "name": "tests/enhanced.now.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ee1ac7151369516c6016ccb9b66ea6574ee3c71e34d8f4269c9cffc1cab20ebe",
+   "format": 1
+  },
+  {
+   "name": "tests/network.enhanced.now.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b761770cbf0844ef603fd11d7b9b4da06dacc15416a41630c12d5d8ca384216a",
+   "format": 1
+  },
+  {
+   "name": "tests/now.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c58ec2323cb34d8db55a528c303bcea707e050cb04237ed2a1d8d59974691255",
+   "format": 1
+  },
+  {
    "name": ".github",
    "ftype": "dir",
    "chksum_type": null,
@@ -183,10 +288,24 @@
    "format": 1
   },
   {
+   "name": ".github/workflows/galaxy-release.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "bc82e07b7d94027d17753d366917193d3b75f09ba96b77662c5c8ae08584b50d",
+   "format": 1
+  },
+  {
    "name": ".github/workflows/ansible-test.yml",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "a42e5cb5d4b6a0bb82ad0ceae3e6360af4d3ff7984acfdbbe7400e1b902f593e",
+   "chksum_sha256": "7edfb7837997796db09c6755dfc60bdbbb3371e6b6af269e344d6e5173053bfe",
+   "format": 1
+  },
+  {
+   "name": "galaxy.yml.j2",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "53a2118e16d9cb75dd10d89be133c9242bca7f078f93f642f1886e84816b1819",
    "format": 1
   }
  ],

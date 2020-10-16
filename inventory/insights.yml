@@ -1,5 +1,7 @@
 ---
 plugin: redhatinsights.insights.insights
+compose:
+  ansible_host: insights_ip_addresses[0]
 get_patches: yes
 groups:
   patch_bugs: insights_patching.rhba_count > 0
