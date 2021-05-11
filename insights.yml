@@ -1,5 +1,5 @@
 ---
-plugin: redhatinsights.insights.insights
+plugin: redhat.insights.insights
 compose:
   ansible_host: insights_ip_addresses[0]
 get_patches: yes

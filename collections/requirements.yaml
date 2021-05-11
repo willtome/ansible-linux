@@ -3,4 +3,5 @@ collections:
   - name: servicenow.servicenow
     version: 1.0.3-dev3
   - amazon.aws
-  - name: redhatinsights.insights
+  - name: redhat.insights
+    version: 1.0.4
