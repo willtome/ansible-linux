@@ -52,7 +52,7 @@
 
 - name: allow port 9100
   firewalld:
-    port: 9100
+    port: 9100/tcp
     permanent: yes
     state: enabled
 
