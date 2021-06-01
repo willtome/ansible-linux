@@ -20,6 +20,6 @@
       name: "{{ inventory_hostname }}"
       other:
         monitor: true
-      delegate_to: localhost
-      become: no
+    delegate_to: localhost
+    become: no
 
