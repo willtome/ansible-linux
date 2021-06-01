@@ -1,8 +1,6 @@
 ---
 - hosts: "{{ HOSTS }}"
   become: yes
-  collections:
-  - redhatinsights.insights
 
   tasks:
     - import_role:

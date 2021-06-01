@@ -5,3 +5,5 @@ collections:
   - amazon.aws
   - name: redhat.insights
     version: 1.0.4
+  - name: servicenow.itsm
+    version: 1.0.0

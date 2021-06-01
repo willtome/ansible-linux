@@ -4,5 +4,6 @@ hosts
 ansible.cfg
 /roles
 !/roles/tower-api/
+!/roles/monitoring
 !/roles/requirements.yml
 !/roles/requirements.yml

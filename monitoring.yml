@@ -1,0 +1,25 @@
+---
+- hosts: "{{ HOSTS }}"
+  name: Install Monitoring Client
+  become: yes
+  vars:
+    update_prometheus: true
+  
+  tasks:
+  - import_role:
+      name: monitoring
+      tasks_from: client
+
+  - import_role:
+      name: monitoring
+      tasks_from: update_server
+    delegate_to: monitoring
+    
+  - name: update CMDB
+    servicenow.itsm.configuration_item:
+      name: "{{ inventory_hostname }}"
+      other:
+        monitor: true
+      delegate_to: localhost
+      become: no
+
