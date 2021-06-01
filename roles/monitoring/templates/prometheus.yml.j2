@@ -31,7 +31,7 @@ scrape_configs:
 
   ## Add Node Exporter
 {% for host in groups['monitor'] %}
-  - job_name: '{{ host.name }}'
+  - job_name: '{{ host }}'
     scrape_interval: 5s
     static_configs:
     - targets: ['{{ hostvars[host]['ansible_host'] }}:9100']
