@@ -18,7 +18,7 @@
   - name: update CMDB
     servicenow.itsm.configuration_item:
       name: "{{ inventory_hostname }}"
-      class: cmdb_ci_server
+      sys_class_name: cmdb_ci_server
       other:
         monitor: true
     delegate_to: localhost
