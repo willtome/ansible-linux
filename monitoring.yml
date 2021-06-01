@@ -6,11 +6,6 @@
     update_prometheus: true
   
   tasks:
-  - name: add to monitor group
-    add_host:
-      name: "{{ inventory_hostname }}"
-      groups: monitor
-
   - import_role:
       name: monitoring
       tasks_from: client
