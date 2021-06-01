@@ -1,0 +1,14 @@
+---
+- name: add host to monitoring
+  add_host:
+    name: "{{ inventory_hostname }}"
+    group: monitor
+    
+- name: configure prometheus
+  template:
+    src: templates/prometheus.yml.j2
+    dest: /etc/prometheus/prometheus.yml
+    owner: prometheus
+    group: prometheus
+    validate: '/opt/prometheus/prometheus-1.7.1.linux-amd64/promtool check-config %s'
+  notify: restart_prometheus
