@@ -13,7 +13,7 @@
         os_version: "{{ ansible_distribution_version }}"
         ram: "{{ ansible_memtotal_mb }}"
         cpu_count: "{{ ansible_processor_count }}"
-        environment: "{{ environment | default(omit) }}"
+        environment: "{{ env | default(omit) }}"
       sys_class_name: cmdb_ci_server
       sys_id: "{{ sys_id | default(omit) }}"
     delegate_to: localhost
