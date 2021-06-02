@@ -2,7 +2,7 @@
 - hosts: "{{ HOSTS }}"
   vars:
     insights_tags:
-      environment: "{{ environment }}"
+      environment: "{{ env }}"
   roles:
     - register_rhel
     - redhat.insights.insights_client
