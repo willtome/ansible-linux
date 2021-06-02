@@ -6,9 +6,10 @@
 
 - name: collect all hosts for monitoring
   add_host:
-    name: "{{ item.inventory_hostname }}"
+    name: "{{ item.value.inventory_hostname }}"
     group: monitor
-  loop: "{{ hostvars }}"
+  loop: "{{ hostvars | dict2items }}"
+  when: item.value.monitor
     
 - name: configure prometheus
   template:
