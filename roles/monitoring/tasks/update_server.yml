@@ -21,4 +21,4 @@
     group: prometheus
     validate: '/opt/prometheus/prometheus-1.7.1.linux-amd64/promtool check-config %s'
   notify: restart_prometheus
-  check: yes
+  check_mode: yes
