@@ -9,7 +9,9 @@
     name: "{{ item.value.inventory_hostname }}"
     group: monitor
   loop: "{{ hostvars | dict2items }}"
-  when: item.value.monitor
+  when: 
+    - item.value.monitor is defined
+    - item.value.monitor
     
 - name: configure prometheus
   template:
@@ -19,3 +21,4 @@
     group: prometheus
     validate: '/opt/prometheus/prometheus-1.7.1.linux-amd64/promtool check-config %s'
   notify: restart_prometheus
+  check: yes
