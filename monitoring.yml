@@ -21,6 +21,7 @@
       sys_class_name: cmdb_ci_server
       other:
         monitor: true
+      sys_id: "{{ sys_id | default(omit) }}"
     delegate_to: localhost
     become: no
 
