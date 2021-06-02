@@ -11,7 +11,8 @@
   loop: "{{ hostvars | dict2items }}"
   when: 
     - item.value.monitor is defined
-    - item.value.monitor
+    - item.value.ansible_host is defined
+    - item.value.monitor == "true"
     
 - name: configure prometheus
   template:
