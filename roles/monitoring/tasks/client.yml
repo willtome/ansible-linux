@@ -50,13 +50,6 @@
     state: started
     enabled: yes
 
-- name: allow port 9100
-  firewalld:
-    port: 9100/tcp
-    permanent: yes
-    immediate: yes
-    state: enabled
-
 - name: Check whether port 9100 is available
   wait_for:
     host: "{{ ansible_host }}"

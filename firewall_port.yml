@@ -1,0 +1,12 @@
+---
+- hosts: "{{ HOSTS }}"
+  gather_facts: no
+  become: no
+
+  tasks:
+  - name: allow tcp port
+    firewalld:
+      port: "{{ port_number }}/tcp"
+      permanent: yes
+      immediate: yes
+      state: enabled
