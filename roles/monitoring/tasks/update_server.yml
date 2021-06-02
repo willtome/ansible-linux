@@ -9,6 +9,8 @@
     name: "{{ item.value.inventory_hostname }}"
     group: monitor
   loop: "{{ hostvars | dict2items }}"
+  loop_control:
+    label: "{{ item.key }}"
   when: 
     - item.value.monitor is defined
     - item.value.ansible_host is defined
