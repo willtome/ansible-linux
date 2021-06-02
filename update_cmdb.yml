@@ -8,7 +8,7 @@
       name: "{{ ansible_hostname }}"
       mac_address: "{{ ansible_default_ipv4.macaddress }}"
       ip_address: "{{ ansible_default_ipv4.address }}"
-      install_status: "{{ installed }}"
+      install_status: installed
       other:
         os_version: "{{ ansible_distribution_version }}"
         ram: "{{ ansible_memtotal_mb }}"
