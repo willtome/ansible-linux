@@ -43,11 +43,13 @@
       name: "{{ item }}"
       state: started
     loop:
-      - atd
       - 'boinc-client'
+      - atd
 
   - name: World Community Grid
     command:
       cmd: "boinccmd --project_attach {{boinc_url}} {{boinc_auth}}"
       chdir: /var/lib/boinc/
       creates: "/var/lib/boinc/account_{{ boinc_url }}.xml"
+    retries: 3
+    delay: 5
