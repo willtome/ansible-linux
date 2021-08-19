@@ -16,6 +16,13 @@
       password: '$6$rxiW8KZH$LUN.DuvVgMMzojJESXdD7ML8i40h.DHISO8vV0VfPmoJvzpNwil1OW26ZqvyZtyPOqmCDzr01CCJowCEoAaOI/'
     when: "'aws_ec2' in group_names"
 
+  - name: deploy ssh keys
+    authorized_key:
+      user: root
+      state: present
+      key: "{{ ssh_public_key }}"
+    when: ssh_public_key is defined
+
   - name: allow wheel group to sudo with NOPASSWD
     lineinfile:
       path: /etc/sudoers
