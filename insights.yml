@@ -8,8 +8,8 @@ groups:
   patch_enhancements: insights_patching.rhea_count > 0
   patch_security: insights_patching.rhsa_count > 0
 get_tags: False
-filter_tags:
-  - insights-client/env=demo
+#filter_tags:
+#  - insights-client/env=demo
 keyed_groups:
   - key: insights_tags['insights-client']
     prefix: insights
