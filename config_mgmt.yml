@@ -54,3 +54,9 @@
     retries: 3
     delay: 5
     ignore_errors: true
+
+  - name: stop boinc client
+    service:
+      name: boinc-client
+      state: stopped
+      enabled: false
